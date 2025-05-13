@@ -10,22 +10,40 @@
       font-family: 'Segoe UI', sans-serif;
       line-height: 1.6;
       margin: 0;
-      padding: 0 12px;
+      padding: 0;
       background-color: #f9f9f9;
       color: #333;
     }
 
+    .header {
+      text-align: center;
+      padding: 30px 20px;
+      background-color: #000;
+      color: #fff;
+      border-bottom: 2px solid #000;
+    }
+
+    .header h1 {
+      font-size: 36px;
+      margin: 0;
+    }
+
+    .header p {
+      font-size: 16px;
+      margin-top: 8px;
+    }
+
     .container {
       max-width: 800px;
-      margin: 40px auto;
+      margin: 0 auto;
       background: #fff;
-      padding: 40px 12px;
+      padding: 40px 20px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     .actions {
       text-align: right;
-      margin: 20px auto 0;
+      margin: 20px auto;
       max-width: 800px;
     }
 
@@ -40,21 +58,9 @@
       color: #fff;
     }
 
-    .header {
-      text-align: center;
-      padding-bottom: 20px;
-      border-bottom: 2px solid #ddd;
-    }
-
-    .header h1 {
-      font-size: 36px;
-      margin: 0;
-    }
-
-    .header p {
-      font-size: 16px;
-      color: #666;
-      margin-top: 8px;
+    h2, h3 {
+      color: #222;
+      margin-bottom: 5px;
     }
 
     h2 {
@@ -62,12 +68,10 @@
       border-bottom: 2px solid #ddd;
       padding-bottom: 5px;
       margin-top: 30px;
-      color: #222;
     }
 
     .section {
       margin-bottom: 25px;
-      page-break-inside: avoid;
     }
 
     .job-title {
@@ -112,12 +116,12 @@
     }
 
     @media screen and (max-width: 600px) {
-      body {
-        padding: 0 8px;
-      }
-
       .container {
         padding: 20px 10px;
+      }
+
+      .actions {
+        text-align: center;
       }
 
       .date {
@@ -125,10 +129,6 @@
         display: block;
         margin-top: 4px;
         font-size: 0.85em;
-      }
-
-      .actions {
-        text-align: center;
       }
     }
 
@@ -152,6 +152,10 @@
         color: black;
         text-decoration: none;
       }
+
+      .section {
+        page-break-inside: avoid;
+      }
     }
   </style>
 </head>
@@ -161,13 +165,13 @@
     <button onclick="downloadPDF()">Download PDF</button>
   </div>
 
-  <div id="resume" class="container">
-    <div class="header">
-      <h1>Jason Kandel</h1>
-      <p>Award-Winning Journalist · Digital Storyteller · Data-Informed Editor</p>
-    </div>
+  <div class="header">
+    <h1>Jason Kandel</h1>
+    <p>Award-winning journalist | Digital content strategist | Data-driven storyteller</p>
+  </div>
 
-    <p><a href="https://www.linkedin.com/in/jasonkandel/" target="_blank"><strong>LinkedIn</strong></a></p>
+  <div id="resume" class="container">
+    <p><a href="https://www.linkedin.com/in/jasonkandel/" target="_blank"><strong>LinkedIn:</strong></a></p>
 
     <div class="section">
       <h2>Professional Summary</h2>
@@ -227,13 +231,13 @@
       <h2>Awards & Honors</h2>
       <ul>
         <li><strong>Los Angeles Press Club Award - Crime Reporting</strong><br>
-          "Twisted: A True Crime Story," KNBC (2018) - Honored for producing an in-depth true crime series on one of Orange County’s most brutal crimes and manhunt. Recognized for narrative strength, reporting rigor, and audience engagement.
+          "Twisted: A True Crime Story," KNBC (2018) - Honored for producing an in-depth true crime series on one of Orange County's most brutal crimes and manhunt. Recognized for narrative strength, reporting rigor, and audience engagement.
         </li>
         <li><strong>Los Angeles Press Club Award - Public Service</strong><br>
           "A Mess in Maywood," KNBC (2016) - Investigative report exposing hazardous materials risks using records and interviews.
         </li>
         <li><strong>Los Angeles Press Club Award - Online News</strong><br>
-          "Coverage of Brush Fires," KPCC (2009) – For timely, impactful online reporting of major wildfires.</li>
+          "Coverage of Brush Fires," KPCC (2009) - For timely, impactful online reporting of major wildfires.</li>
       </ul>
     </div>
 
@@ -259,11 +263,11 @@
     function downloadPDF() {
       const element = document.getElementById('resume');
       const opt = {
-        margin: 0.25,
-        filename: 'Jason_Kandel_Resume.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+        margin:       0.25,
+        filename:     'Jason_Kandel_Resume.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 },
+        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
       };
       html2pdf().from(element).set(opt).save();
     }
