@@ -8,40 +8,38 @@
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      line-height: 1.6;
       margin: 0;
       padding: 0;
-      background-color: #f5f5f5;
+      background-color: #f9f9f9;
       color: #333;
     }
 
-    .header {
-      background: linear-gradient(to bottom, #000000, #ffffff);
-      color: white;
+    header {
+      background-color: white;
+      border-bottom: 1px solid black;
+      padding: 30px 20px 20px;
       text-align: center;
-      padding: 40px 20px 20px;
-      border-bottom: 2px solid black;
     }
 
-    .header h1 {
+    header h1 {
       margin: 0;
       font-size: 36px;
+      color: #000;
     }
 
-    .header p {
+    header p {
       margin: 10px 0 0;
       font-size: 18px;
-      color: #f0f0f0;
+      color: #555;
     }
 
     .actions {
       text-align: right;
-      margin: 15px auto;
-      max-width: 800px;
+      margin: 15px 20px 0;
     }
 
     .actions button {
-      padding: 10px 16px;
+      padding: 8px 12px;
       margin-left: 10px;
       font-size: 14px;
       border: none;
@@ -49,31 +47,26 @@
       cursor: pointer;
       background-color: #0366d6;
       color: #fff;
-      transition: background-color 0.3s ease;
-    }
-
-    .actions button:hover {
-      background-color: #024fa1;
     }
 
     .container {
       max-width: 800px;
-      margin: 0 auto;
+      margin: 20px auto 40px;
       background: #fff;
       padding: 40px 20px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     h2 {
       font-size: 22px;
       border-bottom: 2px solid #ddd;
       padding-bottom: 5px;
-      margin-top: 40px;
+      margin-top: 30px;
       color: #222;
     }
 
     .section {
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
 
     .job-title {
@@ -92,6 +85,10 @@
 
     li {
       margin-bottom: 6px;
+    }
+
+    .clear {
+      clear: both;
     }
 
     .skills-grid {
@@ -114,32 +111,35 @@
     }
 
     @media screen and (max-width: 600px) {
+      header h1 {
+        font-size: 28px;
+      }
+
+      header p {
+        font-size: 16px;
+      }
+
+      .container {
+        padding: 30px 15px;
+        margin: 20px auto;
+      }
+
       .date {
         float: none;
         display: block;
         margin-top: 4px;
+        font-size: 0.85em;
       }
 
       .actions {
         text-align: center;
       }
-
-      .container {
-        padding: 30px 15px;
-      }
-
-      .header {
-        padding: 30px 10px 15px;
-      }
     }
 
     @media print {
-      .actions {
-        display: none;
-      }
-
       body {
         margin: 0.25in;
+        padding: 0;
       }
 
       .container {
@@ -148,26 +148,31 @@
         padding: 0;
       }
 
+      .actions {
+        display: none;
+      }
+
       a {
         color: black;
         text-decoration: none;
       }
 
-      .header {
-        background: black;
-        color: white;
-        border-bottom: none;
-        -webkit-print-color-adjust: exact;
+      h2 {
+        page-break-before: avoid;
+      }
+
+      .section {
+        page-break-inside: avoid;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="header">
+  <header>
     <h1>Jason Kandel</h1>
-    <p>Award-winning Journalist · Digital Content Strategist · Data-Driven Storyteller</p>
-  </div>
+    <p>Award-winning Journalist · Digital Strategist · Storyteller</p>
+  </header>
 
   <div class="actions">
     <button onclick="window.print()">Print</button>
@@ -175,49 +180,54 @@
   </div>
 
   <div id="resume" class="container">
-    <p><a href="https://www.linkedin.com/in/jasonkandel/" target="_blank"><strong>LinkedIn</strong></a></p>
+    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/jasonkandel/" target="_blank">linkedin.com/in/jasonkandel</a></p>
 
     <div class="section">
       <h2>Professional Summary</h2>
-      <p>Award-winning journalist with deep experience producing high-impact digital content, leading breaking news coverage, and managing editorial workflows in fast-paced newsrooms. Skilled in cross-platform strategy, real-time collaboration, and alignment with legal and standards teams to uphold journalistic integrity in sensitive coverage areas.</p>
+      <p>Award-winning journalist and editor with a strong track record of producing compelling, strategically focused content across digital platforms. Experienced in shaping messaging that drives engagement, aligns with brand voice, and meets organizational goals. Skilled in collaborative editorial planning, SEO strategy, and audience-first storytelling.</p>
     </div>
 
     <div class="section">
       <h2>Key Accomplishments</h2>
       <ul>
+        <li>Created an interactive COVID-19 ZIP code map using CARTO, integrated with Microsoft Excel and R analysis, that drove repeat user engagement.</li>
         <li>Produced an award-winning true crime series for NBC Los Angeles that doubled time on site and became one of the station's most shared and engaging digital projects.</li>
         <li>Built a wildfire resources page for Southern California Public Radio that led to a 3x increase in pageviews in one month and was used in local emergency communications.</li>
         <li>Spearheaded real-time breaking news and database reporting at the Los Angeles Daily News, resulting in a 2x increase in traffic and record-breaking digital growth.</li>
-        <li>Created an interactive COVID-19 ZIP code map using CARTO Location Intelligence, integrated with Microsoft Excel and R analysis, that drove repeat user engagement.</li>
       </ul>
     </div>
 
     <div class="section">
       <h2>Experience</h2>
+
       <p><span class="job-title">Weekend Editor, Law & Crime</span> <span class="date">Jan 2023 – Mar 2025</span></p>
       <ul>
         <li>Edited legal news stories, shaping content for clarity, accuracy, and reader impact.</li>
-        <li>Raised the news outlet's profile by delivering 3 to 4 clear, engaging stories daily.</li>
-        <li>Utilized AI tools such as ChatGPT, Otter.ai, and Trint for content creation and transcription.</li>
+        <li>Delivered 3–4 clear, engaging stories daily, simplifying complex legal issues for general readers.</li>
+        <li>Experimented with AI tools such as ChatGPT to enhance story angles; employed Otter.ai and Trint for transcription.</li>
       </ul>
+
       <p><span class="job-title">Digital News Producer, KNBC-Los Angeles</span> <span class="date">Dec 2011 - Aug 2022</span></p>
       <ul>
-        <li>Produced the top-viewed stories by posting real-time updates about mass shootings and major brush fires across platforms during peak coverage periods.</li>
-        <li>Drove maximum audience engagement by posting interactive multimedia content to the website and scheduling Facebook posts for further reach.</li>
-        <li>Used Excel, R, and CARTO to surface trends and build interactive visualizations that boosted engagement.</li>
+        <li>Produced top-viewed stories covering mass shootings and wildfires across platforms during peak news events.</li>
+        <li>Increased reach by posting multimedia content and scheduling social posts for maximum visibility.</li>
+        <li>Used Excel, R, and CARTO for trend analysis and interactive visual storytelling.</li>
       </ul>
+
       <p><span class="job-title">Freelance Reporter, Thomson Reuters</span> <span class="date">July - Dec 2011</span></p>
       <ul>
         <li>Drove website traffic by writing high-impact stories, such as a motorcycle gang war that erupted at a Starbucks and police spying on protesters at an Occupy Los Angeles rally.</li>
-        <li>Elevated the wire service's digital presence by delivering high-quality content, pitching fresh news angles, and delivering accurate 800-word stories on deadline.</li>
+        <li>Elevated the wire service’s digital presence by delivering high-quality content, pitching fresh news angles, and delivering accurate 800-word stories on deadline.</li>
         <li>Enhanced story visibility through search-engine-optimized headlines and collaborative planning with news editors and reporters.</li>
       </ul>
+
       <p><span class="job-title">Online Managing Editor, Southern California Public Radio</span> <span class="date">Aug 2009 - July 2011</span></p>
       <ul>
-        <li>Transformed the station's digital operation into a 24/7 multi-platform news outlet by emphasizing breaking news, interactive projects, and interdepartmental synergy.</li>
-        <li>Expanded KPCC's reach into the region's diverse communities by launching a blog called Multi-American that chronicled immigration and culture.</li>
-        <li>Raised the station's profile by aligning radio production with digital strategy to make the site the go-to place for community news and information.</li>
+        <li>Transformed the station’s digital operation into a 24/7 multi-platform news outlet by emphasizing breaking news, interactive projects, and interdepartmental synergy.</li>
+        <li>Raised the station’s profile by aligning radio production with digital strategy to make the site the go-to place for community news and information.</li>
+        <li>Expanded KPCC’s reach into the region’s diverse communities by launching a blog called Multi-American that chronicled immigration and culture.</li>
       </ul>
+
       <p><span class="job-title">Online Editor, Los Angeles Daily News</span> <span class="date">Oct 2008 - Aug 2009</span></p>
       <ul>
         <li>Led the site to record-breaking traffic levels by posting 3 to 5 breaking news stories daily and developing special interactive projects and database reporting initiatives.</li>
@@ -231,7 +241,7 @@
       <ul>
         <li><strong>Los Angeles Press Club Award - Crime Reporting</strong><br>
           "Twisted: A True Crime Story," KNBC (2018)</li>
-        <li><strong>Los Angeles Press Club Award - Environmental Reporting</strong><br>
+        <li><strong>Los Angeles Press Club Award - Public Service</strong><br>
           "A Mess in Maywood," KNBC (2016)</li>
         <li><strong>Los Angeles Press Club Award - Online News</strong><br>
           "Coverage of Brush Fires," KPCC (2009)</li>
@@ -260,16 +270,15 @@
     function downloadPDF() {
       const element = document.getElementById('resume');
       const opt = {
-        margin: 0.25,
-        filename: 'Jason_Kandel_Resume.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+        margin:       0.25,
+        filename:     'Jason_Kandel_Resume.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 },
+        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
       };
       html2pdf().from(element).set(opt).save();
     }
   </script>
 </body>
 </html>
-
 
