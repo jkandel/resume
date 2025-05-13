@@ -15,17 +15,9 @@
       color: #333;
     }
 
-    .container {
-      max-width: 800px;
-      margin: 40px auto;
-      background: #fff;
-      padding: 40px 12px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
     .actions {
       text-align: right;
-      margin: 20px auto 0;
+      margin: 20px auto;
       max-width: 800px;
     }
 
@@ -38,6 +30,14 @@
       cursor: pointer;
       background-color: #0366d6;
       color: #fff;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 40px 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     h1, h2, h3 {
@@ -59,6 +59,7 @@
 
     .section {
       margin-bottom: 25px;
+      page-break-inside: avoid;
     }
 
     .job-title {
@@ -111,15 +112,15 @@
         padding: 20px 10px;
       }
 
-      .actions {
-        text-align: center;
-      }
-
       .date {
         float: none;
         display: block;
         margin-top: 4px;
         font-size: 0.85em;
+      }
+
+      .actions {
+        text-align: center;
       }
     }
 
@@ -147,7 +148,6 @@
   </style>
 </head>
 <body>
-
   <div class="actions">
     <button onclick="window.print()">Print</button>
     <button onclick="downloadPDF()">Download PDF</button>
@@ -155,7 +155,7 @@
 
   <div id="resume" class="container">
     <h1>Jason Kandel</h1>
-    <p><a href="https://www.linkedin.com/in/jasonkandel/" target="_blank" rel="noopener noreferrer"><strong>LinkedIn</strong></a></p>
+    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/jasonkandel/" target="_blank">linkedin.com/in/jasonkandel</a></p>
 
     <div class="section">
       <h2>Professional Summary</h2>
@@ -174,32 +174,39 @@
 
     <div class="section">
       <h2>Experience</h2>
-
       <p><span class="job-title">Weekend Editor, Law & Crime</span> <span class="date">Jan 2023 – Mar 2025</span></p>
       <ul>
         <li>Edited legal news stories, shaping content for clarity, accuracy, and reader impact.</li>
-        <li>Delivered 3 to 4 stories daily, simplifying complex legal issues and using AI tools like ChatGPT, Otter.ai, and Trint to enhance workflows.</li>
+        <li>Delivered 3–4 engaging daily stories, simplifying complex legal issues for general readers.</li>
+        <li>Utilized AI tools like ChatGPT, Otter.ai, and Trint for efficient reporting and transcription.</li>
       </ul>
 
       <p><span class="job-title">Digital News Producer, KNBC-Los Angeles</span> <span class="date">Dec 2011 - Aug 2022</span></p>
       <ul>
-        <li>Produced top-viewed stories during breaking news events and scheduled social media posts to amplify reach.</li>
-        <li>Used Excel, R, and CARTO to create interactive visualizations and identify trends.</li>
+        <li>Produced real-time updates during mass shootings and wildfires across platforms.</li>
+        <li>Posted interactive multimedia content and optimized social media scheduling.</li>
+        <li>Used Excel, R, and CARTO to develop interactive maps and visualize data trends.</li>
       </ul>
 
       <p><span class="job-title">Freelance Reporter, Thomson Reuters</span> <span class="date">July - Dec 2011</span></p>
       <ul>
-        <li>Wrote high-impact, SEO-optimized stories on deadline, increasing digital visibility and reader engagement.</li>
+        <li>Delivered timely, high-impact stories including gang violence and Occupy LA protests.</li>
+        <li>Wrote 800-word stories on deadline with fresh angles and optimized headlines.</li>
+        <li>Collaborated with editors for accuracy and digital distribution strategies.</li>
       </ul>
 
       <p><span class="job-title">Online Managing Editor, Southern California Public Radio</span> <span class="date">Aug 2009 - July 2011</span></p>
       <ul>
-        <li>Transformed the newsroom into a 24/7 digital-first operation, launching popular community blogs and enhancing emergency coverage.</li>
+        <li>Turned KPCC into a 24/7 multi-platform news outlet emphasizing breaking news and interactivity.</li>
+        <li>Aligned radio and digital strategies for stronger community engagement.</li>
+        <li>Launched the Multi-American blog to cover immigration and cultural diversity.</li>
       </ul>
 
       <p><span class="job-title">Online Editor, Los Angeles Daily News</span> <span class="date">Oct 2008 - Aug 2009</span></p>
       <ul>
-        <li>Drove record-breaking traffic with breaking news and multimedia content. Trained staff in digital publishing tools and standards.</li>
+        <li>Posted 3–5 breaking stories daily and developed special projects to boost site traffic.</li>
+        <li>Shot video for wildfire coverage aired by major networks.</li>
+        <li>Trained newsroom staff in web publishing and video editing tools.</li>
       </ul>
     </div>
 
@@ -207,11 +214,11 @@
       <h2>Awards & Honors</h2>
       <ul>
         <li><strong>Los Angeles Press Club Award - Investigative Journalism</strong><br>
-          "Twisted: A True Crime Story," KNBC (2018)</li>
+          "Twisted: A True Crime Story," KNBC (2018) – Recognized for narrative depth and audience engagement.</li>
         <li><strong>Los Angeles Press Club Award - Environmental Reporting</strong><br>
-          "A Mess in Maywood," KNBC (2016)</li>
+          "A Mess in Maywood," KNBC (2016) – Exposed hazardous waste issues via records and interviews.</li>
         <li><strong>Second Place, Online News</strong><br>
-          "Coverage of Brush Fires," KPCC (2009)</li>
+          "Coverage of Brush Fires," KPCC (2009) – Real-time wildfire reporting acknowledged for public service.</li>
       </ul>
     </div>
 
@@ -237,11 +244,11 @@
     function downloadPDF() {
       const element = document.getElementById('resume');
       const opt = {
-        margin:       0.25,
-        filename:     'Jason_Kandel_Resume.pdf',
-        image:        { type: 'jpeg', quality: 0.98 },
-        html2canvas:  { scale: 2 },
-        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+        margin: 0.25,
+        filename: 'Jason_Kandel_Resume.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
       };
       html2pdf().from(element).set(opt).save();
     }
